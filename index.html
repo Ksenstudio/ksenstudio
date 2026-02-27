@@ -6,21 +6,39 @@
 
     <title>Krishna Sen - Web Developer in Ahmedabad | Website Designer India</title>
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Krishna Sen is a professional web developer in Ahmedabad, India. I create modern business websites, shop websites and portfolio websites at affordable prices. Contact now for website development services.">
-
     <meta name="keywords" content="Krishna Sen, Web Developer in Ahmedabad, Website Developer India, Portfolio Website Developer, Business Website Designer">
-
     <meta name="author" content="Krishna Sen">
-
     <meta name="robots" content="index, follow">
 
-    <!-- Google Verification -->
     <meta name="google-site-verification" content="LlZwnfFkbRIMcThDxU-tAQC4M5eBQlbJrcfvs5t2tx0" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050810; color: #e2e8f0; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        html { scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        @keyframes float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-10px); } 
+            100% { transform: translateY(0px); } 
+        }
+        .float-logo { animation: float 4s ease-in-out infinite; }
+        .profile-img { object-fit: cover; object-position: top; }
+
+        /* Custom scrollbar for legal modal */
+        .custom-scroll::-webkit-scrollbar { width: 5px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 10px; }
+    </style>
 </head>
 <body>
 
@@ -92,7 +110,7 @@
             <div>
                 <h3 class="text-4xl font-extrabold mb-8">Elevating your <span class="text-blue-500">Business</span> with Code</h3>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast, secure, and SEO-friendly websites. I don't just write code; I build business tools that help you make money.
+                    I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast, secure, and SEO-friendly websites. Based in Ahmedabad, India, I build business tools designed to convert visitors into customers.
                 </p>
                 <div class="space-y-4">
                     <div class="flex items-center gap-4">
@@ -171,26 +189,45 @@
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-xs border-t border-white/5 uppercase tracking-[0.3em]">
-        Krishna Sen Web Developer &copy; 2026 | Built for Performance
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-600 text-xs uppercase tracking-[0.3em] text-center md:text-left">
+                Krishna Sen Web Developer &copy; 2026 | Ahmedabad, India
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-blue-400 transition">Terms & Conditions</a>
+                <a href="javascript:void(0)" onclick="openModal('disclaimer')" class="hover:text-blue-400 transition">Disclaimer</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
     </footer>
+
+    <div id="legalModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+        <div class="glass max-w-2xl w-full max-h-[80vh] rounded-[2rem] p-8 md:p-12 relative border border-white/10 flex flex-col">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white"><i data-lucide="x"></i></button>
+            <div id="modalBody" class="overflow-y-auto custom-scroll pr-4 text-gray-400 text-sm leading-relaxed">
+                </div>
+        </div>
+    </div>
 
     <script>
         lucide.createIcons();
 
+        // Reveal effect
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 150) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
 
+        // Counter Logic
         const counters = document.querySelectorAll('.counter');
         const speed = 200;
         counters.forEach(counter => {
@@ -205,19 +242,58 @@
                     counter.innerText = target;
                 }
             };
-            
             const observer = new IntersectionObserver((entries) => {
                 if(entries[0].isIntersecting) updateCount();
             });
             observer.observe(counter);
         });
+
+        // Legal Content for AdSense
+        const legalContent = {
+            privacy: `
+                <h2 class="text-2xl font-black text-white mb-4">Privacy Policy</h2>
+                <p class="mb-4 text-blue-400 font-bold">Effective Date: February 2026</p>
+                <p class="mb-4">At Krishna Sen Web Developer, we prioritize your privacy. This policy explains what information we collect and how we use it.</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">1. Information We Collect</h3>
+                <p class="mb-4">We only collect personal information (name, email) that you voluntarily provide through our contact form to inquire about services.</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">2. Google AdSense & Cookies</h3>
+                <p class="mb-4">Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</p>
+                <p class="mb-4">Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" class="text-blue-400">Ads Settings</a>.</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">3. Data Protection</h3>
+                <p class="mb-4">We do not sell, trade, or otherwise transfer your personal information to outside parties.</p>
+            `,
+            terms: `
+                <h2 class="text-2xl font-black text-white mb-4">Terms & Conditions</h2>
+                <p class="mb-4">By accessing this website, you agree to comply with the following terms:</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">1. Intellectual Property</h3>
+                <p class="mb-4">The design, code, and content of this website are owned by Krishna Sen. Unauthorized reproduction is prohibited.</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">2. Service Terms</h3>
+                <p class="mb-4">Project timelines and pricing quotes provided are estimates and may vary based on specific client requirements. A formal contract is signed before starting any major project.</p>
+                <h3 class="text-white font-bold mt-6 mb-2 underline">3. Limitation of Liability</h3>
+                <p class="mb-4">Krishna Sen will not be liable for any indirect or consequential loss or damage arising out of the use of this website.</p>
+            `,
+            disclaimer: `
+                <h2 class="text-2xl font-black text-white mb-4">Disclaimer</h2>
+                <p class="mb-4">The information provided on this website is for general informational purposes only.</p>
+                <p class="mb-4">While we strive to keep information up to date and correct, we make no representations or warranties of any kind about the completeness or accuracy regarding the website or the information, services, or related graphics contained on the website for any purpose.</p>
+                <p class="mb-4">Any reliance you place on such information is strictly at your own risk.</p>
+            `
+        };
+
+        function openModal(type) {
+            document.getElementById('modalBody').innerHTML = legalContent[type];
+            document.getElementById('legalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('legalModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
     </script>
 </body>
-
 </html>
-
-
-
 
 
 
