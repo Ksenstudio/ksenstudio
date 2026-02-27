@@ -18,12 +18,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050810; color: #e2e8f0; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* FORCE DARK THEME - Fixes your white background issue */
+        :root {
+            color-scheme: dark;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050810 !important; 
+            color: #e2e8f0 !important; 
+            overflow-x: hidden; 
+            margin: 0;
+        }
+
+        /* Fixed Glass Effect - Increased opacity for visibility */
+        .glass { 
+            background: rgba(255, 255, 255, 0.05) !important; 
+            backdrop-filter: blur(12px) !important; 
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+        }
+
+        /* Fixed Gradient - Added fallback color */
+        .text-gradient { 
+            color: #38bdf8;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
         
         html { scroll-behavior: smooth; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+
+        /* Animation Fixes */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
         @keyframes float { 
@@ -32,15 +59,13 @@
             100% { transform: translateY(0px); } 
         }
         .float-logo { animation: float 4s ease-in-out infinite; }
-        .profile-img { object-fit: cover; object-position: top; }
-
-        /* Custom scrollbar for legal modal */
+        
         .custom-scroll::-webkit-scrollbar { width: 5px; }
         .custom-scroll::-webkit-scrollbar-track { background: transparent; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 10px; }
     </style>
 </head>
-<body>
+<body class="bg-[#050810]">
 
     <nav class="fixed w-full z-[100] glass py-4 px-6 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center gap-3">
@@ -53,12 +78,12 @@
             <a href="#contact" class="hover:text-white transition">Contact</a>
         </div>
         <div class="flex items-center gap-4">
-            <a href="tel:8734808866" class="hidden sm:block text-sm font-bold">+91 8734808866</a>
-            <a href="https://wa.me/918734808866" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20">Chat Now</a>
+            <a href="tel:8734808866" class="hidden sm:block text-sm font-bold text-white">+91 8734808866</a>
+            <a href="https://wa.me/918734808866" class="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20 text-white">Chat Now</a>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center justify-center text-center px-6 pt-20">
+    <section class="relative min-h-screen flex items-center justify-center text-center px-6 pt-20 overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600/20 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-600/20 rounded-full blur-[120px]"></div>
         
@@ -66,7 +91,7 @@
             <div class="inline-block px-4 py-1 rounded-full glass text-xs font-bold text-blue-400 mb-6 border border-blue-500/20 uppercase tracking-widest">
                 Top Rated Developer in India
             </div>
-            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight text-white">
                 Crafting <span class="text-gradient">Digital</span><br>Masterpieces.
             </h1>
             <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -101,14 +126,14 @@
     <section id="about" class="py-32 px-6 max-w-6xl mx-auto reveal">
         <div class="grid md:grid-cols-2 gap-20 items-center">
             <div class="relative">
-                <img src="krishna.png" class="rounded-[2.5rem] shadow-2xl border-4 border-white/5 w-full profile-img" alt="Krishna Sen">
+                <img src="krishna.png" class="rounded-[2.5rem] shadow-2xl border-4 border-white/5 w-full object-cover" alt="Krishna Sen">
                 <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl border-blue-500/30 border">
                     <p class="text-xs text-blue-400 font-bold uppercase">Expertise</p>
-                    <p class="text-lg font-bold">Full Stack Dev</p>
+                    <p class="text-lg font-bold text-white">Full Stack Dev</p>
                 </div>
             </div>
             <div>
-                <h3 class="text-4xl font-extrabold mb-8">Elevating your <span class="text-blue-500">Business</span> with Code</h3>
+                <h3 class="text-4xl font-extrabold mb-8 text-white">Elevating your <span class="text-blue-500">Business</span> with Code</h3>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
                     I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast, secure, and SEO-friendly websites. Based in Ahmedabad, India, I build business tools designed to convert visitors into customers.
                 </p>
@@ -128,23 +153,23 @@
 
     <section id="pricing" class="py-32 bg-[#080b14] px-6">
         <div class="text-center mb-16 reveal">
-            <h2 class="text-4xl font-black mb-4">Professional Charge Packs</h2>
+            <h2 class="text-4xl font-black mb-4 text-white">Professional Charge Packs</h2>
             <p class="text-blue-400 font-bold uppercase tracking-widest text-sm">3-Month Launch Offer Active</p>
         </div>
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div class="glass p-10 rounded-[2.5rem] border hover:border-blue-500/50 transition-all group reveal">
-                <h4 class="text-xl font-bold mb-1">Lite Pack</h4>
-                <div class="text-4xl font-black my-6">₹1,799 <span class="text-sm text-gray-600 line-through">₹2,999</span></div>
+                <h4 class="text-xl font-bold mb-1 text-white">Lite Pack</h4>
+                <div class="text-4xl font-black my-6 text-white">₹1,799 <span class="text-sm text-gray-600 line-through">₹2,999</span></div>
                 <ul class="space-y-4 text-gray-400 text-sm mb-10">
                     <li>✓ 1 Page Landing Site</li>
                     <li>✓ Contact Form to Email</li>
                     <li>✓ 3-Day Delivery</li>
                 </ul>
-                <a href="#contact" class="block w-full py-4 text-center glass rounded-xl font-bold group-hover:bg-white group-hover:text-black transition">Choose Lite</a>
+                <a href="#contact" class="block w-full py-4 text-center glass rounded-xl font-bold group-hover:bg-white group-hover:text-black transition text-white">Choose Lite</a>
             </div>
             <div class="glass p-10 rounded-[2.5rem] border-2 border-blue-600 scale-105 relative reveal shadow-2xl shadow-blue-500/10">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-[10px] font-black py-1 px-4 rounded-full uppercase tracking-widest">Best Choice</div>
-                <h4 class="text-xl font-bold mb-1">Pro Pack</h4>
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-[10px] font-black py-1 px-4 rounded-full uppercase tracking-widest text-white">Best Choice</div>
+                <h4 class="text-xl font-bold mb-1 text-white">Pro Pack</h4>
                 <div class="text-4xl font-black my-6 text-blue-400">₹4,999 <span class="text-sm text-gray-600 line-through">₹7,499</span></div>
                 <ul class="space-y-4 text-gray-400 text-sm mb-10">
                     <li>✓ Up to 5 Pages</li>
@@ -152,9 +177,9 @@
                     <li>✓ 7-10 Day Delivery</li>
                     <li>✓ WhatsApp Support</li>
                 </ul>
-                <a href="#contact" class="block w-full py-4 text-center bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/40">Choose Pro</a>
+                <a href="#contact" class="block w-full py-4 text-center bg-blue-600 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 text-white">Choose Pro</a>
             </div>
-            <div class="glass p-10 rounded-[2.5rem] border hover:border-blue-500/50 transition-all group reveal">
+            <div class="glass p-10 rounded-[2.5rem] border hover:border-blue-500/50 transition-all group reveal text-white">
                 <h4 class="text-xl font-bold mb-1">Elite Pack</h4>
                 <div class="text-4xl font-black my-6">₹9,999 <span class="text-sm text-gray-600 line-through">₹14,999</span></div>
                 <ul class="space-y-4 text-gray-400 text-sm mb-10">
@@ -174,16 +199,16 @@
                 <div>
                     <h2 class="text-4xl font-black mb-6 leading-tight text-gradient">Let's build<br>your project.</h2>
                     <p class="text-gray-400 mb-8">I'll get your business online within a week. Submit your details or call me directly.</p>
-                    <div class="space-y-4">
+                    <div class="space-y-4 text-white">
                         <div class="flex items-center gap-3 font-bold"><i data-lucide="phone" class="text-blue-500"></i> 8734808866</div>
                         <div class="flex items-center gap-3 font-bold"><i data-lucide="mail" class="text-blue-500"></i> ksenwebdevloper@gmail.com</div>
                     </div>
                 </div>
                 <form action="https://formspree.io/f/xreajylp" method="POST" class="space-y-4">
-                    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition">
-                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition">
-                    <textarea name="message" rows="4" placeholder="Briefly describe your project..." required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition"></textarea>
-                    <button type="submit" class="w-full py-4 bg-white text-black font-black rounded-xl hover:bg-blue-500 hover:text-white transition-all shadow-xl">Send Details</button>
+                    <input type="text" name="name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition text-white">
+                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition text-white">
+                    <textarea name="message" rows="4" placeholder="Briefly describe your project..." required class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-blue-500 outline-none transition text-white"></textarea>
+                    <button type="submit" class="w-full py-4 bg-white text-black font-black rounded-xl hover:bg-blue-600 hover:text-white transition-all shadow-xl">Send Details</button>
                 </form>
             </div>
         </div>
@@ -206,38 +231,35 @@
     <div id="legalModal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
         <div class="glass max-w-2xl w-full max-h-[80vh] rounded-[2rem] p-8 md:p-12 relative border border-white/10 flex flex-col">
             <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white"><i data-lucide="x"></i></button>
-            <div id="modalBody" class="overflow-y-auto custom-scroll pr-4 text-gray-400 text-sm leading-relaxed">
-                </div>
+            <div id="modalBody" class="overflow-y-auto custom-scroll pr-4 text-gray-400 text-sm leading-relaxed"></div>
         </div>
     </div>
 
     <script>
         lucide.createIcons();
 
-        // Reveal effect
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
+                if (elementTop < windowHeight - 100) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
+        window.onload = reveal;
 
-        // Counter Logic
         const counters = document.querySelectorAll('.counter');
-        const speed = 200;
         counters.forEach(counter => {
             const updateCount = () => {
                 const target = +counter.getAttribute('data-target');
                 const count = +counter.innerText;
-                const inc = target / speed;
+                const inc = Math.max(1, target / 100);
                 if (count < target) {
                     counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 10);
+                    setTimeout(updateCount, 20);
                 } else {
                     counter.innerText = target;
                 }
@@ -248,36 +270,10 @@
             observer.observe(counter);
         });
 
-        // Legal Content for AdSense
         const legalContent = {
-            privacy: `
-                <h2 class="text-2xl font-black text-white mb-4">Privacy Policy</h2>
-                <p class="mb-4 text-blue-400 font-bold">Effective Date: February 2026</p>
-                <p class="mb-4">At Krishna Sen Web Developer, we prioritize your privacy. This policy explains what information we collect and how we use it.</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">1. Information We Collect</h3>
-                <p class="mb-4">We only collect personal information (name, email) that you voluntarily provide through our contact form to inquire about services.</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">2. Google AdSense & Cookies</h3>
-                <p class="mb-4">Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to your website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to your users based on their visit to your sites and/or other sites on the Internet.</p>
-                <p class="mb-4">Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" class="text-blue-400">Ads Settings</a>.</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">3. Data Protection</h3>
-                <p class="mb-4">We do not sell, trade, or otherwise transfer your personal information to outside parties.</p>
-            `,
-            terms: `
-                <h2 class="text-2xl font-black text-white mb-4">Terms & Conditions</h2>
-                <p class="mb-4">By accessing this website, you agree to comply with the following terms:</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">1. Intellectual Property</h3>
-                <p class="mb-4">The design, code, and content of this website are owned by Krishna Sen. Unauthorized reproduction is prohibited.</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">2. Service Terms</h3>
-                <p class="mb-4">Project timelines and pricing quotes provided are estimates and may vary based on specific client requirements. A formal contract is signed before starting any major project.</p>
-                <h3 class="text-white font-bold mt-6 mb-2 underline">3. Limitation of Liability</h3>
-                <p class="mb-4">Krishna Sen will not be liable for any indirect or consequential loss or damage arising out of the use of this website.</p>
-            `,
-            disclaimer: `
-                <h2 class="text-2xl font-black text-white mb-4">Disclaimer</h2>
-                <p class="mb-4">The information provided on this website is for general informational purposes only.</p>
-                <p class="mb-4">While we strive to keep information up to date and correct, we make no representations or warranties of any kind about the completeness or accuracy regarding the website or the information, services, or related graphics contained on the website for any purpose.</p>
-                <p class="mb-4">Any reliance you place on such information is strictly at your own risk.</p>
-            `
+            privacy: `<h2 class="text-2xl font-black text-white mb-4">Privacy Policy</h2><p class="mb-4 text-blue-400 font-bold">Effective Date: February 2026</p><p>We collect your email only to contact you about your project. We use Google AdSense which uses cookies to show relevant ads.</p>`,
+            terms: `<h2 class="text-2xl font-black text-white mb-4">Terms & Conditions</h2><p>By using this site, you agree to our service terms. All content is property of Krishna Sen.</p>`,
+            disclaimer: `<h2 class="text-2xl font-black text-white mb-4">Disclaimer</h2><p>Information is for general purposes only. Results may vary based on business needs.</p>`
         };
 
         function openModal(type) {
@@ -294,6 +290,3 @@
     </script>
 </body>
 </html>
-
-
-
