@@ -13,8 +13,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Krishna Sen | Web Developer in India</title>
+
   <meta name="description" content="Krishna Sen is a professional web developer in India. I create modern business websites, shop websites and portfolio websites at affordable prices. Contact now for website development services." />
   <meta name="keywords" content="Krishna Sen, Web Developer in India, Website Developer India, Portfolio Website Developer, Business Website Designer" />
   <meta name="author" content="Krishna Sen" />
@@ -45,15 +45,12 @@
     :root{
       --bg:#04070d;
       --bg-soft:#090f1d;
-      --card:rgba(255,255,255,0.06);
-      --card-2:rgba(255,255,255,0.03);
-      --line:rgba(255,255,255,0.10);
       --text:#e5eefc;
       --muted:#94a3b8;
       --blue:#38bdf8;
       --indigo:#818cf8;
       --purple:#c084fc;
-      --shadow: 0 30px 80px rgba(0,0,0,0.45);
+      --shadow:0 30px 80px rgba(0,0,0,.42);
     }
 
     *{
@@ -67,49 +64,54 @@
     }
 
     body{
-      font-family:'Plus Jakarta Sans', sans-serif;
-      background:
-        radial-gradient(circle at 15% 15%, rgba(56,189,248,0.14), transparent 20%),
-        radial-gradient(circle at 85% 20%, rgba(129,140,248,0.13), transparent 20%),
-        radial-gradient(circle at 50% 80%, rgba(192,132,252,0.12), transparent 20%),
-        linear-gradient(180deg, #03060c 0%, #07111f 50%, #03060c 100%);
+      font-family:'Plus Jakarta Sans',sans-serif;
       color:var(--text);
-      overflow-x:hidden;
       min-height:100vh;
-      cursor:none;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 12% 14%, rgba(56,189,248,.14), transparent 22%),
+        radial-gradient(circle at 88% 20%, rgba(129,140,248,.13), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(192,132,252,.10), transparent 24%),
+        linear-gradient(180deg,#03060c 0%,#07111f 50%,#03060c 100%);
     }
 
-    a, button, input, textarea {
-      cursor:none;
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container-main{
+      width:min(1200px, calc(100% - 32px));
+      margin-inline:auto;
     }
 
     .grid-bg{
       position:fixed;
       inset:0;
       z-index:-5;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size:40px 40px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.15));
       pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:40px 40px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.78), rgba(0,0,0,.12));
     }
 
     .noise{
       position:fixed;
       inset:0;
       z-index:-4;
-      opacity:0.05;
       pointer-events:none;
+      opacity:.05;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='12' cy='10' r='1'/%3E%3Ccircle cx='70' cy='25' r='1'/%3E%3Ccircle cx='108' cy='82' r='1'/%3E%3Ccircle cx='34' cy='67' r='1'/%3E%3Ccircle cx='120' cy='18' r='1'/%3E%3Ccircle cx='55' cy='115' r='1'/%3E%3C/g%3E%3C/svg%3E");
     }
 
     .orb{
       position:absolute;
       border-radius:999px;
-      filter:blur(70px);
-      pointer-events:none;
+      filter:blur(72px);
       opacity:.55;
+      pointer-events:none;
       animation:floatOrb 12s ease-in-out infinite;
     }
 
@@ -118,91 +120,60 @@
       height:260px;
       background:rgba(56,189,248,.18);
       top:10%;
-      left:8%;
+      left:6%;
     }
 
     .orb-2{
       width:320px;
       height:320px;
       background:rgba(129,140,248,.17);
-      top:18%;
-      right:8%;
-      animation-delay: -3s;
+      top:17%;
+      right:6%;
+      animation-delay:-3s;
     }
 
     .orb-3{
       width:240px;
       height:240px;
-      background:rgba(192,132,252,.16);
-      bottom:8%;
+      background:rgba(192,132,252,.14);
+      bottom:10%;
       left:38%;
-      animation-delay: -6s;
+      animation-delay:-6s;
     }
 
     @keyframes floatOrb{
-      0%,100%{transform:translateY(0) translateX(0) scale(1);}
-      50%{transform:translateY(-18px) translateX(10px) scale(1.04);}
+      0%,100%{transform:translateY(0) translateX(0) scale(1)}
+      50%{transform:translateY(-18px) translateX(10px) scale(1.04)}
     }
 
     .glass{
-      background:linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,0.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
       box-shadow:var(--shadow);
     }
 
     .glass-soft{
-      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-      backdrop-filter:blur(15px);
-      -webkit-backdrop-filter:blur(15px);
-      border:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .nav-blur{
+      background:rgba(4,7,13,.72);
+      border-bottom:1px solid rgba(255,255,255,.07);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
     }
 
     .text-gradient{
-      background:linear-gradient(90deg, var(--blue), var(--indigo), var(--purple));
+      background:linear-gradient(90deg,var(--blue),var(--indigo),var(--purple));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
       color:transparent;
-    }
-
-    .nav-blur{
-      background:rgba(4,7,13,0.70);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(255,255,255,0.07);
-    }
-
-    .hero-3d{
-      perspective:1200px;
-    }
-
-    .hero-panel{
-      transform-style:preserve-3d;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-panel::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(120deg, rgba(255,255,255,.10), rgba(255,255,255,0) 35%),
-        radial-gradient(circle at 20% 20%, rgba(56,189,248,.16), transparent 30%);
-      pointer-events:none;
-    }
-
-    .floating-card{
-      transform-style:preserve-3d;
-      transition:transform .18s ease, box-shadow .3s ease, border-color .3s ease;
-      will-change:transform;
-    }
-
-    .floating-card:hover{
-      border-color:rgba(56,189,248,.40);
-      box-shadow:0 22px 60px rgba(56,189,248,.12), 0 30px 80px rgba(0,0,0,.32);
     }
 
     .chip{
@@ -211,8 +182,8 @@
       gap:8px;
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
       color:#cbd5e1;
       font-size:12px;
       font-weight:700;
@@ -220,37 +191,35 @@
       text-transform:uppercase;
     }
 
-    .btn-primary{
-      background:linear-gradient(135deg, #ffffff, #dbeafe);
-      color:#020617;
-      font-weight:800;
-      border-radius:16px;
-      padding:15px 26px;
-      box-shadow:0 20px 50px rgba(255,255,255,.12);
-      transition:.25s ease;
+    .btn-primary,
+    .btn-secondary{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
+      min-height:52px;
+      padding:14px 24px;
+      border-radius:16px;
+      font-weight:800;
+      transition:.25s ease;
+      text-align:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#ffffff,#dbeafe);
+      color:#020617;
+      box-shadow:0 20px 50px rgba(255,255,255,.12);
     }
 
     .btn-primary:hover{
-      transform:translateY(-3px) scale(1.02);
+      transform:translateY(-3px);
       box-shadow:0 24px 55px rgba(255,255,255,.16);
     }
 
     .btn-secondary{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
       color:white;
-      font-weight:800;
-      border-radius:16px;
-      padding:15px 26px;
-      transition:.25s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
     }
 
     .btn-secondary:hover{
@@ -259,22 +228,11 @@
       box-shadow:0 20px 50px rgba(56,189,248,.10);
     }
 
-    .reveal{
-      opacity:0;
-      transform:translateY(40px);
-      transition:opacity .9s ease, transform .9s ease;
-    }
-
-    .reveal.active{
-      opacity:1;
-      transform:translateY(0);
-    }
-
     .section-title{
       font-size:clamp(2rem, 4vw, 3.2rem);
       line-height:1.05;
       font-weight:900;
-      letter-spacing:-0.03em;
+      letter-spacing:-.03em;
     }
 
     .section-sub{
@@ -290,8 +248,19 @@
     }
 
     @keyframes logoFloat{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-10px);}
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+
+    .floating-card{
+      transition:transform .18s ease, box-shadow .25s ease, border-color .25s ease;
+      will-change:transform;
+      transform-style:preserve-3d;
+    }
+
+    .floating-card:hover{
+      border-color:rgba(56,189,248,.35);
+      box-shadow:0 18px 55px rgba(56,189,248,.10), 0 24px 72px rgba(0,0,0,.26);
     }
 
     .shine{
@@ -302,7 +271,7 @@
     .shine::after{
       content:"";
       position:absolute;
-      top:-120%;
+      top:-130%;
       left:-20%;
       width:40%;
       height:300%;
@@ -312,45 +281,7 @@
     }
 
     .shine:hover::after{
-      transform:translateX(300%) rotate(20deg);
-    }
-
-    .counter-value{
-      text-shadow:0 0 25px rgba(56,189,248,.18);
-    }
-
-    .contact-input{
-      width:100%;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.10);
-      color:white;
-      padding:16px 18px;
-      border-radius:16px;
-      outline:none;
-      transition:.25s ease;
-    }
-
-    .contact-input:focus{
-      border-color:rgba(56,189,248,.5);
-      box-shadow:0 0 0 5px rgba(56,189,248,.10);
-      background:rgba(255,255,255,0.06);
-    }
-
-    .custom-scroll::-webkit-scrollbar { width: 6px; }
-    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #38bdf8, #a78bfa);
-      border-radius: 20px;
-    }
-
-    .mobile-menu{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .35s ease;
-    }
-
-    .mobile-menu.open{
-      max-height:420px;
+      transform:translateX(320%) rotate(20deg);
     }
 
     .service-icon{
@@ -363,18 +294,33 @@
       border:1px solid rgba(255,255,255,.08);
       color:#7dd3fc;
       box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+      flex-shrink:0;
     }
 
-    .legal-link:hover{
-      color:#7dd3fc;
+    .reveal{
+      opacity:0;
+      transform:translateY(20px);
+      transition:opacity .5s ease, transform .5s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .counter-value{
+      text-shadow:0 0 25px rgba(56,189,248,.18);
     }
 
     .project-card img{
-      transition:transform .5s ease;
+      transition:transform .45s ease;
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
     .project-card:hover img{
-      transform:scale(1.08);
+      transform:scale(1.06);
     }
 
     .testimonial-stars{
@@ -382,17 +328,52 @@
       letter-spacing:2px;
     }
 
+    .contact-input{
+      width:100%;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      color:white;
+      padding:15px 16px;
+      border-radius:16px;
+      outline:none;
+      transition:.25s ease;
+      font:inherit;
+    }
+
+    .contact-input:focus{
+      border-color:rgba(56,189,248,.5);
+      box-shadow:0 0 0 5px rgba(56,189,248,.10);
+      background:rgba(255,255,255,.06);
+    }
+
+    .mobile-menu{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+
+    .mobile-menu.open{
+      max-height:420px;
+    }
+
+    .custom-scroll::-webkit-scrollbar{width:6px}
+    .custom-scroll::-webkit-scrollbar-track{background:transparent}
+    .custom-scroll::-webkit-scrollbar-thumb{
+      background:linear-gradient(180deg,#38bdf8,#a78bfa);
+      border-radius:20px;
+    }
+
     .loader{
       position:fixed;
       inset:0;
       z-index:9999;
-      background:linear-gradient(180deg, #03060c 0%, #07111f 100%);
+      background:linear-gradient(180deg,#03060c 0%,#07111f 100%);
       display:flex;
       align-items:center;
       justify-content:center;
       flex-direction:column;
       gap:18px;
-      transition:opacity .7s ease, visibility .7s ease;
+      transition:opacity .5s ease, visibility .5s ease;
     }
 
     .loader.hidden{
@@ -402,10 +383,10 @@
     }
 
     .loader-ring{
-      width:74px;
-      height:74px;
+      width:70px;
+      height:70px;
       border-radius:50%;
-      border:3px solid rgba(255,255,255,0.08);
+      border:3px solid rgba(255,255,255,.08);
       border-top-color:#38bdf8;
       border-right-color:#a78bfa;
       animation:spin 1.1s linear infinite;
@@ -413,7 +394,7 @@
     }
 
     @keyframes spin{
-      to{transform:rotate(360deg);}
+      to{transform:rotate(360deg)}
     }
 
     .cursor-dot,
@@ -430,7 +411,7 @@
     .cursor-dot{
       width:8px;
       height:8px;
-      background:#ffffff;
+      background:#fff;
       box-shadow:0 0 18px rgba(255,255,255,.7);
     }
 
@@ -449,11 +430,78 @@
       background:rgba(192,132,252,.08);
     }
 
-    @media (max-width: 900px){
-      body, a, button, input, textarea{
-        cursor:auto;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:56px;
+      align-items:center;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    @media (max-width: 1100px){
+      .hero-grid,
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
       }
 
+      .services-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .testimonials-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width: 900px){
       .cursor-dot,
       .cursor-ring{
         display:none;
@@ -461,9 +509,58 @@
     }
 
     @media (max-width: 768px){
-      .orb-1,.orb-2,.orb-3{
-        filter:blur(90px);
-        opacity:.45;
+      .container-main{
+        width:min(100% - 24px, 1200px);
+      }
+
+      .orb{
+        display:none;
+      }
+
+      .glass,
+      .glass-soft{
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+      }
+
+      .services-grid,
+      .projects-grid,
+      .pricing-grid,
+      .testimonials-grid{
+        grid-template-columns:1fr;
+      }
+
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px;
+      }
+
+      .btn-primary,
+      .btn-secondary{
+        width:100%;
+      }
+
+      .floating-card,
+      .floating-card:hover{
+        transform:none !important;
+      }
+
+      .shine::after{
+        display:none;
+      }
+
+      .project-card:hover img{
+        transform:none;
+      }
+
+      .section-title{
+        font-size:clamp(1.9rem, 7vw, 2.5rem);
+      }
+    }
+
+    @media (max-width: 520px){
+      .stats-grid{
+        grid-template-columns:1fr 1fr;
       }
     }
   </style>
@@ -471,9 +568,9 @@
 <body>
   <div class="loader" id="pageLoader">
     <div class="loader-ring"></div>
-    <div class="text-center">
-      <p class="text-white text-2xl font-black tracking-tight">KRISHNA SEN</p>
-      <p class="text-slate-400 text-sm uppercase tracking-[0.3em] mt-2">Loading 3D Portfolio</p>
+    <div style="text-align:center;">
+      <p style="font-size:1.5rem;font-weight:900;color:#fff;letter-spacing:-.02em;">KRISHNA SEN</p>
+      <p style="color:#94a3b8;font-size:.85rem;text-transform:uppercase;letter-spacing:.3em;margin-top:8px;">Loading Portfolio</p>
     </div>
   </div>
 
@@ -487,11 +584,11 @@
   <div class="orb orb-3"></div>
 
   <nav class="fixed top-0 left-0 w-full z-[100] nav-blur">
-    <div class="max-w-7xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="logo.png" alt="Krishna Sen Web Developer Logo" class="h-11 w-11 rounded-2xl shadow-2xl floating-logo border border-white/10 object-cover" />
-        <div>
-          <div class="text-lg md:text-xl font-extrabold tracking-tight text-gradient">KRISHNA SEN</div>
+    <div class="container-main px-0 py-4 flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-3 min-w-0">
+        <img src="logo.png" alt="Krishna Sen Web Developer Logo" class="h-11 w-11 rounded-2xl shadow-2xl floating-logo border border-white/10 object-cover">
+        <div class="min-w-0">
+          <div class="text-lg md:text-xl font-extrabold tracking-tight text-gradient truncate">KRISHNA SEN</div>
           <div class="text-[10px] md:text-xs uppercase tracking-[0.25em] text-slate-500">Web Developer</div>
         </div>
       </a>
@@ -506,7 +603,7 @@
       </div>
 
       <div class="hidden md:flex items-center gap-4">
-        <a href="tel:8734808866" class="text-sm font-bold text-white">+91 8734808866</a>
+        <a href="tel:8734808866" class="text-sm font-bold text-white whitespace-nowrap">+91 8734808866</a>
         <a href="https://wa.me/918734808866" target="_blank" class="btn-secondary">Chat Now</a>
       </div>
 
@@ -515,34 +612,36 @@
       </button>
     </div>
 
-    <div id="mobileMenu" class="mobile-menu md:hidden px-5 pb-4">
-      <div class="glass-soft rounded-3xl p-4 space-y-3">
-        <a href="#about" class="block py-2 text-slate-300 font-semibold">About</a>
-        <a href="#services" class="block py-2 text-slate-300 font-semibold">Services</a>
-        <a href="#projects" class="block py-2 text-slate-300 font-semibold">Projects</a>
-        <a href="#pricing" class="block py-2 text-slate-300 font-semibold">Pricing</a>
-        <a href="#testimonials" class="block py-2 text-slate-300 font-semibold">Testimonials</a>
-        <a href="#contact" class="block py-2 text-slate-300 font-semibold">Contact</a>
-        <div class="pt-2 border-t border-white/10">
-          <a href="tel:8734808866" class="block py-2 text-white font-bold">+91 8734808866</a>
-          <a href="https://wa.me/918734808866" target="_blank" class="mt-2 inline-flex w-full justify-center btn-secondary">Chat Now</a>
+    <div id="mobileMenu" class="mobile-menu md:hidden">
+      <div class="container-main">
+        <div class="glass-soft rounded-3xl p-4 space-y-3 mb-4">
+          <a href="#about" class="block py-2 text-slate-300 font-semibold">About</a>
+          <a href="#services" class="block py-2 text-slate-300 font-semibold">Services</a>
+          <a href="#projects" class="block py-2 text-slate-300 font-semibold">Projects</a>
+          <a href="#pricing" class="block py-2 text-slate-300 font-semibold">Pricing</a>
+          <a href="#testimonials" class="block py-2 text-slate-300 font-semibold">Testimonials</a>
+          <a href="#contact" class="block py-2 text-slate-300 font-semibold">Contact</a>
+          <div class="pt-2 border-t border-white/10">
+            <a href="tel:8734808866" class="block py-2 text-white font-bold">+91 8734808866</a>
+            <a href="https://wa.me/918734808866" target="_blank" class="mt-2 inline-flex w-full justify-center btn-secondary">Chat Now</a>
+          </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <section class="relative min-h-screen flex items-center pt-28 pb-16 px-5 md:px-6 overflow-hidden">
-    <div class="max-w-7xl mx-auto w-full hero-3d">
-      <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-10 items-center">
+  <section class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+    <div class="container-main">
+      <div class="hero-grid">
         <div class="reveal">
           <div class="chip mb-6">
             <span class="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_15px_#38bdf8]"></span>
             Top Rated Developer in India
           </div>
 
-          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-black leading-[0.95] tracking-[-0.05em] text-white">
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.3rem] font-black leading-[0.95] tracking-[-0.05em] text-white">
             Crafting
-            <span class="text-gradient">Digital</span><br />
+            <span class="text-gradient">Digital</span><br>
             Masterpieces.
           </h1>
 
@@ -571,15 +670,15 @@
         </div>
 
         <div class="reveal">
-          <div class="hero-panel glass rounded-[2.5rem] p-5 md:p-7 floating-card" data-tilt>
+          <div class="glass rounded-[2.5rem] p-5 md:p-7 floating-card">
             <div class="grid gap-5">
               <div class="glass-soft rounded-[2rem] p-5 md:p-6">
-                <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center justify-between mb-4 gap-4">
                   <div>
                     <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Developer Profile</p>
                     <h3 class="text-2xl md:text-3xl font-black text-white mt-1">Krishna Sen</h3>
                   </div>
-                  <img src="logo.png" alt="Krishna Sen Logo" class="h-14 w-14 rounded-2xl border border-white/10 object-cover shadow-xl" />
+                  <img src="logo.png" alt="Krishna Sen Logo" class="h-14 w-14 rounded-2xl border border-white/10 object-cover shadow-xl">
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
@@ -627,7 +726,7 @@
                   <div>
                     <p class="text-slate-500 text-xs uppercase tracking-[0.25em]">Direct Contact</p>
                     <p class="text-white font-extrabold text-lg mt-2">8734808866</p>
-                    <p class="text-slate-400 text-sm mt-1">ksenwebdevloper@gmail.com</p>
+                    <p class="text-slate-400 text-sm mt-1 break-all">ksenwebdevloper@gmail.com</p>
                   </div>
                   <a href="https://wa.me/918734808866" target="_blank" class="btn-secondary">
                     <i data-lucide="message-circle"></i>
@@ -642,81 +741,85 @@
     </div>
   </section>
 
-  <section class="relative px-5 md:px-6 pb-12">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 reveal">
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
-        <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="100">0</p>
-        <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Projects Done</p>
-      </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
-        <p class="counter-value text-4xl md:text-5xl font-black text-cyan-300" data-target="98">0</p>
-        <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Happy Clients %</p>
-      </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
-        <p class="counter-value text-4xl md:text-5xl font-black text-violet-300" data-target="24">0</p>
-        <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Support Hours</p>
-      </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
-        <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="5">0</p>
-        <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Avg. Days Delivery</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-center">
-      <div class="reveal">
-        <div class="relative glass rounded-[2.5rem] p-4 md:p-5 floating-card" data-tilt>
-          <img src="krishna.png" alt="Krishna Sen Web Developer in India" class="w-full h-full object-cover rounded-[2rem] border border-white/10" />
-          <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-6 glass rounded-3xl px-5 py-4">
-            <p class="text-[10px] uppercase tracking-[0.25em] text-cyan-300 font-bold">Expertise</p>
-            <p class="text-white font-extrabold text-lg mt-1">Full Stack Dev</p>
-          </div>
+  <section class="relative pb-12">
+    <div class="container-main">
+      <div class="stats-grid reveal">
+        <div class="glass rounded-[2rem] p-6 md:p-8 floating-card">
+          <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="100">0</p>
+          <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Projects Done</p>
         </div>
-      </div>
-
-      <div class="reveal">
-        <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">About Me</p>
-        <h2 class="section-title text-white">
-          Elevating your <span class="text-gradient">Business</span> with Code
-        </h2>
-
-        <p class="text-slate-400 text-base md:text-lg leading-8 mt-7">
-          I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast,
-          secure, and SEO-friendly websites. Based in India, I build business tools designed
-          to convert visitors into customers.
-        </p>
-
-        <div class="grid sm:grid-cols-2 gap-4 mt-8">
-          <div class="glass-soft rounded-[1.6rem] p-5 floating-card">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="service-icon"><i data-lucide="zap"></i></div>
-              <h3 class="text-white font-bold">Ultra-fast Performance</h3>
-            </div>
-            <p class="text-slate-400 text-sm leading-7">Optimized pages for quick loading, smooth navigation, and better user experience.</p>
-          </div>
-          <div class="glass-soft rounded-[1.6rem] p-5 floating-card">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="service-icon"><i data-lucide="shield-check"></i></div>
-              <h3 class="text-white font-bold">Advanced Security</h3>
-            </div>
-            <p class="text-slate-400 text-sm leading-7">Built with clean structure and reliable setup for a stable and professional web presence.</p>
-          </div>
+        <div class="glass rounded-[2rem] p-6 md:p-8 floating-card">
+          <p class="counter-value text-4xl md:text-5xl font-black text-cyan-300" data-target="98">0</p>
+          <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Happy Clients %</p>
         </div>
-
-        <div class="flex flex-wrap gap-3 mt-8">
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">Tailwind</span>
-          <span class="chip">SEO Friendly</span>
+        <div class="glass rounded-[2rem] p-6 md:p-8 floating-card">
+          <p class="counter-value text-4xl md:text-5xl font-black text-violet-300" data-target="24">0</p>
+          <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Support Hours</p>
+        </div>
+        <div class="glass rounded-[2rem] p-6 md:p-8 floating-card">
+          <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="5">0</p>
+          <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Avg. Days Delivery</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="about" class="py-20 md:py-28">
+    <div class="container-main">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="relative glass rounded-[2.5rem] p-4 md:p-5 floating-card">
+            <img src="krishna.png" alt="Krishna Sen Web Developer in India" class="w-full h-full object-cover rounded-[2rem] border border-white/10">
+            <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-6 glass rounded-3xl px-5 py-4">
+              <p class="text-[10px] uppercase tracking-[0.25em] text-cyan-300 font-bold">Expertise</p>
+              <p class="text-white font-extrabold text-lg mt-1">Full Stack Dev</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">About Me</p>
+          <h2 class="section-title text-white">
+            Elevating your <span class="text-gradient">Business</span> with Code
+          </h2>
+
+          <p class="text-slate-400 text-base md:text-lg leading-8 mt-7">
+            I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast,
+            secure, and SEO-friendly websites. Based in India, I build business tools designed
+            to convert visitors into customers.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 mt-8">
+            <div class="glass-soft rounded-[1.6rem] p-5 floating-card">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="service-icon"><i data-lucide="zap"></i></div>
+                <h3 class="text-white font-bold">Ultra-fast Performance</h3>
+              </div>
+              <p class="text-slate-400 text-sm leading-7">Optimized pages for quick loading, smooth navigation, and better user experience.</p>
+            </div>
+            <div class="glass-soft rounded-[1.6rem] p-5 floating-card">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="service-icon"><i data-lucide="shield-check"></i></div>
+                <h3 class="text-white font-bold">Advanced Security</h3>
+              </div>
+              <p class="text-slate-400 text-sm leading-7">Built with clean structure and reliable setup for a stable and professional web presence.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Tailwind</span>
+            <span class="chip">SEO Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20 md:py-28">
+    <div class="container-main">
       <div class="text-center reveal">
         <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Services</p>
         <h2 class="section-title text-white">Website Development Services</h2>
@@ -726,8 +829,8 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-14">
-        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
+      <div class="services-grid mt-14">
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine">
           <div class="service-icon mb-5"><i data-lucide="briefcase-business"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Business Websites</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -735,7 +838,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine">
           <div class="service-icon mb-5"><i data-lucide="user-round"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Portfolio Websites</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -743,7 +846,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine">
           <div class="service-icon mb-5"><i data-lucide="panel-top"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Landing Pages</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -751,7 +854,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine">
           <div class="service-icon mb-5"><i data-lucide="search-check"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Basic SEO Setup</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -762,8 +865,8 @@
     </div>
   </section>
 
-  <section id="projects" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="projects" class="py-20 md:py-28">
+    <div class="container-main">
       <div class="text-center reveal">
         <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Projects</p>
         <h2 class="section-title text-white">Project Showcase</h2>
@@ -772,10 +875,10 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-14">
-        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+      <div class="projects-grid mt-14">
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card">
           <div class="h-56 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Business website project" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop" alt="Business website project" loading="lazy">
           </div>
           <div class="p-6">
             <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Business Website</p>
@@ -784,9 +887,9 @@
           </div>
         </div>
 
-        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card">
           <div class="h-56 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Portfolio website project" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=900&auto=format&fit=crop" alt="Portfolio website project" loading="lazy">
           </div>
           <div class="p-6">
             <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Portfolio Website</p>
@@ -795,9 +898,9 @@
           </div>
         </div>
 
-        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card">
           <div class="h-56 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Landing page project" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=900&auto=format&fit=crop" alt="Landing page project" loading="lazy">
           </div>
           <div class="p-6">
             <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Landing Page</p>
@@ -809,18 +912,16 @@
     </div>
   </section>
 
-  <section id="pricing" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="pricing" class="py-20 md:py-28">
+    <div class="container-main">
       <div class="text-center reveal">
         <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Pricing</p>
         <h2 class="section-title text-white">Professional Charge Packs</h2>
-        <p class="text-slate-400 mt-6 max-w-2xl mx-auto leading-8">
-          3-Month Launch Offer Active
-        </p>
+        <p class="text-slate-400 mt-6 max-w-2xl mx-auto leading-8">3-Month Launch Offer Active</p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-6 mt-14">
-        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine" data-tilt>
+      <div class="pricing-grid mt-14">
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine">
           <p class="text-white text-2xl font-black">Lite Pack</p>
           <div class="mt-6 text-4xl font-black text-white">
             ₹1,799
@@ -834,7 +935,7 @@
           <a href="#contact" class="btn-secondary w-full mt-8">Choose Lite</a>
         </div>
 
-        <div class="glass rounded-[2.5rem] p-8 floating-card reveal relative border border-cyan-400/40 shadow-[0_20px_80px_rgba(56,189,248,.12)] shine" data-tilt>
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine relative border border-cyan-400/40 shadow-[0_20px_80px_rgba(56,189,248,.12)]">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-cyan-400 text-slate-950 text-[11px] font-black uppercase tracking-[0.2em]">
             Best Choice
           </div>
@@ -852,7 +953,7 @@
           <a href="#contact" class="btn-primary w-full mt-8">Choose Pro</a>
         </div>
 
-        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine" data-tilt>
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine">
           <p class="text-white text-2xl font-black">Elite Pack</p>
           <div class="mt-6 text-4xl font-black text-white">
             ₹9,999
@@ -870,8 +971,8 @@
     </div>
   </section>
 
-  <section id="testimonials" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="testimonials" class="py-20 md:py-28">
+    <div class="container-main">
       <div class="text-center reveal">
         <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Testimonials</p>
         <h2 class="section-title text-white">Client Feedback</h2>
@@ -880,8 +981,8 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-14">
-        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+      <div class="testimonials-grid mt-14">
+        <div class="glass rounded-[2rem] p-6 floating-card reveal">
           <div class="testimonial-stars text-lg mb-4">★★★★★</div>
           <p class="text-slate-300 leading-8">“Very professional design and fast delivery. The website looks premium and works smoothly on mobile too.”</p>
           <div class="mt-6">
@@ -890,7 +991,7 @@
           </div>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal">
           <div class="testimonial-stars text-lg mb-4">★★★★★</div>
           <p class="text-slate-300 leading-8">“The landing page design was modern, clean, and exactly what I wanted for my business promotion.”</p>
           <div class="mt-6">
@@ -899,7 +1000,7 @@
           </div>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal">
           <div class="testimonial-stars text-lg mb-4">★★★★★</div>
           <p class="text-slate-300 leading-8">“Responsive, stylish, and professional. Communication was good and the final website felt premium.”</p>
           <div class="mt-6">
@@ -911,13 +1012,13 @@
     </div>
   </section>
 
-  <section id="contact" class="py-20 md:py-28 px-5 md:px-6">
-    <div class="max-w-7xl mx-auto reveal">
+  <section id="contact" class="py-20 md:py-28">
+    <div class="container-main reveal">
       <div class="glass rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 relative overflow-hidden">
         <div class="absolute -top-16 -left-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl"></div>
         <div class="absolute -bottom-16 right-0 w-48 h-48 bg-violet-500/20 rounded-full blur-3xl"></div>
 
-        <div class="relative z-10 grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
+        <div class="contact-grid relative z-10">
           <div>
             <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Contact</p>
             <h2 class="section-title text-white">
@@ -962,29 +1063,9 @@
             <input type="hidden" name="_subject" value="New Website Inquiry from Krishna Sen Website">
             <input type="hidden" name="_captcha" value="false">
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              required
-              class="contact-input"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              class="contact-input"
-            />
-
-            <textarea
-              name="message"
-              rows="5"
-              placeholder="Briefly describe your project..."
-              required
-              class="contact-input resize-none"
-            ></textarea>
+            <input type="text" name="name" placeholder="Full Name" required class="contact-input">
+            <input type="email" name="email" placeholder="Email Address" required class="contact-input">
+            <textarea name="message" rows="5" placeholder="Briefly describe your project..." required class="contact-input resize-none"></textarea>
 
             <button type="submit" class="btn-primary w-full mt-2">
               <i data-lucide="send"></i>
@@ -996,18 +1077,20 @@
     </div>
   </section>
 
-  <footer class="px-5 md:px-6 pb-8 pt-4">
-    <div class="max-w-7xl mx-auto glass-soft rounded-[2rem] px-5 md:px-8 py-6">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
-        <div id="footerYear" class="text-slate-500 text-[11px] md:text-xs uppercase tracking-[0.28em] text-center lg:text-left">
-          Krishna Sen Web Developer &copy; 2026 | India
-        </div>
+  <footer class="pb-8 pt-4">
+    <div class="container-main">
+      <div class="glass-soft rounded-[2rem] px-5 md:px-8 py-6">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
+          <div id="footerYear" class="text-slate-500 text-[11px] md:text-xs uppercase tracking-[0.28em] text-center lg:text-left">
+            Krishna Sen Web Developer &copy; 2026 | India
+          </div>
 
-        <div class="flex flex-wrap justify-center gap-5 md:gap-6 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
-          <a href="javascript:void(0)" onclick="openModal('privacy')" class="legal-link transition">Privacy Policy</a>
-          <a href="javascript:void(0)" onclick="openModal('terms')" class="legal-link transition">Terms & Conditions</a>
-          <a href="javascript:void(0)" onclick="openModal('disclaimer')" class="legal-link transition">Disclaimer</a>
-          <a href="#contact" class="legal-link transition">Contact</a>
+          <div class="flex flex-wrap justify-center gap-5 md:gap-6 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
+            <a href="javascript:void(0)" onclick="openModal('privacy')" class="hover:text-cyan-300 transition">Privacy Policy</a>
+            <a href="javascript:void(0)" onclick="openModal('terms')" class="hover:text-cyan-300 transition">Terms & Conditions</a>
+            <a href="javascript:void(0)" onclick="openModal('disclaimer')" class="hover:text-cyan-300 transition">Disclaimer</a>
+            <a href="#contact" class="hover:text-cyan-300 transition">Contact</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1025,27 +1108,30 @@
   <script>
     lucide.createIcons();
 
+    const isMobile = window.innerWidth <= 900;
+
     window.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("pageLoader").classList.add("hidden");
-      }, 900);
+      }, 300);
     });
 
-    const cursorDot = document.getElementById("cursorDot");
-    const cursorRing = document.getElementById("cursorRing");
+    if (!isMobile) {
+      const cursorDot = document.getElementById("cursorDot");
+      const cursorRing = document.getElementById("cursorRing");
 
-    window.addEventListener("mousemove", (e) => {
-      cursorDot.style.left = e.clientX + "px";
-      cursorDot.style.top = e.clientY + "px";
+      window.addEventListener("mousemove", (e) => {
+        cursorDot.style.left = e.clientX + "px";
+        cursorDot.style.top = e.clientY + "px";
+        cursorRing.style.left = e.clientX + "px";
+        cursorRing.style.top = e.clientY + "px";
+      });
 
-      cursorRing.style.left = e.clientX + "px";
-      cursorRing.style.top = e.clientY + "px";
-    });
-
-    document.querySelectorAll("a, button, input, textarea").forEach(el => {
-      el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
-      el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
-    });
+      document.querySelectorAll("a, button, input, textarea").forEach((el) => {
+        el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
+        el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
+      });
+    }
 
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -1054,8 +1140,8 @@
       mobileMenu.classList.toggle("open");
     });
 
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    document.querySelectorAll("#mobileMenu a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
     });
 
     function revealElements() {
@@ -1074,7 +1160,7 @@
 
     const counters = document.querySelectorAll(".counter-value");
     const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.dataset.started) {
           entry.target.dataset.started = "true";
           animateCounter(entry.target);
@@ -1102,29 +1188,25 @@
       updateCount();
     }
 
-    const tiltCards = document.querySelectorAll("[data-tilt]");
+    if (window.innerWidth > 768) {
+      const tiltCards = document.querySelectorAll(".floating-card");
+      tiltCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4;
+          const rotateY = ((x - centerX) / centerX) * 4;
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+        });
 
-    tiltCards.forEach((card) => {
-      card.addEventListener("mousemove", (e) => {
-        if (window.innerWidth < 768) return;
-
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
-
-        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)";
+        });
       });
-
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)";
-      });
-    });
+    }
 
     document.getElementById("footerYear").innerHTML =
       `Krishna Sen Web Developer &copy; ${new Date().getFullYear()} | India`;
@@ -1173,3 +1255,4 @@
   </script>
 </body>
 </html>
+
