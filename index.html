@@ -14,21 +14,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Krishna Sen | Web Developer in Ahmedabad, India</title>
-  <meta name="description" content="Krishna Sen is a professional web developer in Ahmedabad, India. I create modern business websites, shop websites and portfolio websites at affordable prices. Contact now for website development services." />
-  <meta name="keywords" content="Krishna Sen, Web Developer in Ahmedabad, Website Developer India, Portfolio Website Developer, Business Website Designer" />
+  <title>Krishna Sen | Web Developer in India</title>
+  <meta name="description" content="Krishna Sen is a professional web developer in India. I create modern business websites, shop websites and portfolio websites at affordable prices. Contact now for website development services." />
+  <meta name="keywords" content="Krishna Sen, Web Developer in India, Website Developer India, Portfolio Website Developer, Business Website Designer" />
   <meta name="author" content="Krishna Sen" />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="LlZwnfFkbRIMcThDxU-tAQC4M5eBQlbJrcfvs5t2tx0" />
 
-  <meta property="og:title" content="Krishna Sen | Web Developer in Ahmedabad, India" />
+  <meta property="og:title" content="Krishna Sen | Web Developer in India" />
   <meta property="og:description" content="Professional web developer creating modern business, portfolio and landing page websites." />
   <meta property="og:image" content="https://ksenstudio.in/logo.png" />
   <meta property="og:url" content="https://ksenstudio.in" />
   <meta property="og:type" content="website" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Krishna Sen | Web Developer in Ahmedabad, India" />
+  <meta name="twitter:title" content="Krishna Sen | Web Developer in India" />
   <meta name="twitter:description" content="Professional web developer creating modern business, portfolio and landing page websites." />
   <meta name="twitter:image" content="https://ksenstudio.in/logo.png" />
 
@@ -76,12 +76,17 @@
       color:var(--text);
       overflow-x:hidden;
       min-height:100vh;
+      cursor:none;
+    }
+
+    a, button, input, textarea {
+      cursor:none;
     }
 
     .grid-bg{
       position:fixed;
       inset:0;
-      z-index:-4;
+      z-index:-5;
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
@@ -93,7 +98,7 @@
     .noise{
       position:fixed;
       inset:0;
-      z-index:-3;
+      z-index:-4;
       opacity:0.05;
       pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='12' cy='10' r='1'/%3E%3Ccircle cx='70' cy='25' r='1'/%3E%3Ccircle cx='108' cy='82' r='1'/%3E%3Ccircle cx='34' cy='67' r='1'/%3E%3Ccircle cx='120' cy='18' r='1'/%3E%3Ccircle cx='55' cy='115' r='1'/%3E%3C/g%3E%3C/svg%3E");
@@ -160,13 +165,6 @@
       -webkit-text-fill-color:transparent;
       background-clip:text;
       color:transparent;
-    }
-
-    .glow-line{
-      position:absolute;
-      inset:auto 0 0 0;
-      height:1px;
-      background:linear-gradient(90deg, transparent, rgba(56,189,248,.8), transparent);
     }
 
     .nav-blur{
@@ -352,16 +350,7 @@
     }
 
     .mobile-menu.open{
-      max-height:320px;
-    }
-
-    .tilt-wrap{
-      transform-style:preserve-3d;
-      will-change:transform;
-    }
-
-    .tilt-inner{
-      transform:translateZ(40px);
+      max-height:420px;
     }
 
     .service-icon{
@@ -380,6 +369,97 @@
       color:#7dd3fc;
     }
 
+    .project-card img{
+      transition:transform .5s ease;
+    }
+
+    .project-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .testimonial-stars{
+      color:#facc15;
+      letter-spacing:2px;
+    }
+
+    .loader{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      background:linear-gradient(180deg, #03060c 0%, #07111f 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:18px;
+      transition:opacity .7s ease, visibility .7s ease;
+    }
+
+    .loader.hidden{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+
+    .loader-ring{
+      width:74px;
+      height:74px;
+      border-radius:50%;
+      border:3px solid rgba(255,255,255,0.08);
+      border-top-color:#38bdf8;
+      border-right-color:#a78bfa;
+      animation:spin 1.1s linear infinite;
+      box-shadow:0 0 40px rgba(56,189,248,.18);
+    }
+
+    @keyframes spin{
+      to{transform:rotate(360deg);}
+    }
+
+    .cursor-dot,
+    .cursor-ring{
+      position:fixed;
+      top:0;
+      left:0;
+      transform:translate(-50%, -50%);
+      pointer-events:none;
+      z-index:9998;
+      border-radius:50%;
+    }
+
+    .cursor-dot{
+      width:8px;
+      height:8px;
+      background:#ffffff;
+      box-shadow:0 0 18px rgba(255,255,255,.7);
+    }
+
+    .cursor-ring{
+      width:34px;
+      height:34px;
+      border:1px solid rgba(56,189,248,.8);
+      box-shadow:0 0 30px rgba(56,189,248,.22);
+      transition:width .2s ease, height .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .cursor-ring.active{
+      width:52px;
+      height:52px;
+      border-color:rgba(192,132,252,.9);
+      background:rgba(192,132,252,.08);
+    }
+
+    @media (max-width: 900px){
+      body, a, button, input, textarea{
+        cursor:auto;
+      }
+
+      .cursor-dot,
+      .cursor-ring{
+        display:none;
+      }
+    }
+
     @media (max-width: 768px){
       .orb-1,.orb-2,.orb-3{
         filter:blur(90px);
@@ -389,14 +469,23 @@
   </style>
 </head>
 <body>
+  <div class="loader" id="pageLoader">
+    <div class="loader-ring"></div>
+    <div class="text-center">
+      <p class="text-white text-2xl font-black tracking-tight">KRISHNA SEN</p>
+      <p class="text-slate-400 text-sm uppercase tracking-[0.3em] mt-2">Loading 3D Portfolio</p>
+    </div>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
   <div class="grid-bg"></div>
   <div class="noise"></div>
-
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
 
-  <!-- NAVBAR -->
   <nav class="fixed top-0 left-0 w-full z-[100] nav-blur">
     <div class="max-w-7xl mx-auto px-5 md:px-6 py-4 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
@@ -410,7 +499,9 @@
       <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
         <a href="#about" class="hover:text-white transition">About</a>
         <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#projects" class="hover:text-white transition">Projects</a>
         <a href="#pricing" class="hover:text-white transition">Pricing</a>
+        <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
         <a href="#contact" class="hover:text-white transition">Contact</a>
       </div>
 
@@ -428,7 +519,9 @@
       <div class="glass-soft rounded-3xl p-4 space-y-3">
         <a href="#about" class="block py-2 text-slate-300 font-semibold">About</a>
         <a href="#services" class="block py-2 text-slate-300 font-semibold">Services</a>
+        <a href="#projects" class="block py-2 text-slate-300 font-semibold">Projects</a>
         <a href="#pricing" class="block py-2 text-slate-300 font-semibold">Pricing</a>
+        <a href="#testimonials" class="block py-2 text-slate-300 font-semibold">Testimonials</a>
         <a href="#contact" class="block py-2 text-slate-300 font-semibold">Contact</a>
         <div class="pt-2 border-t border-white/10">
           <a href="tel:8734808866" class="block py-2 text-white font-bold">+91 8734808866</a>
@@ -438,7 +531,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="relative min-h-screen flex items-center pt-28 pb-16 px-5 md:px-6 overflow-hidden">
     <div class="max-w-7xl mx-auto w-full hero-3d">
       <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-10 items-center">
@@ -479,7 +571,7 @@
         </div>
 
         <div class="reveal">
-          <div class="hero-panel glass rounded-[2.5rem] p-5 md:p-7 floating-card tilt-wrap" data-tilt>
+          <div class="hero-panel glass rounded-[2.5rem] p-5 md:p-7 floating-card" data-tilt>
             <div class="grid gap-5">
               <div class="glass-soft rounded-[2rem] p-5 md:p-6">
                 <div class="flex items-center justify-between mb-4">
@@ -493,7 +585,7 @@
                 <div class="grid grid-cols-2 gap-4">
                   <div class="glass-soft rounded-2xl p-4">
                     <p class="text-slate-500 text-xs uppercase tracking-[0.25em]">Location</p>
-                    <p class="text-white font-bold mt-2">Ahmedabad, India</p>
+                    <p class="text-white font-bold mt-2">India</p>
                   </div>
                   <div class="glass-soft rounded-2xl p-4">
                     <p class="text-slate-500 text-xs uppercase tracking-[0.25em]">Starting</p>
@@ -544,41 +636,38 @@
                 </div>
               </div>
             </div>
-            <div class="glow-line"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="relative px-5 md:px-6 pb-12">
     <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 reveal">
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card tilt-wrap" data-tilt>
+      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
         <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="100">0</p>
         <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Projects Done</p>
       </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card tilt-wrap" data-tilt>
+      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
         <p class="counter-value text-4xl md:text-5xl font-black text-cyan-300" data-target="98">0</p>
         <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Happy Clients %</p>
       </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card tilt-wrap" data-tilt>
+      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
         <p class="counter-value text-4xl md:text-5xl font-black text-violet-300" data-target="24">0</p>
         <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Support Hours</p>
       </div>
-      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card tilt-wrap" data-tilt>
+      <div class="glass rounded-[2rem] p-6 md:p-8 floating-card" data-tilt>
         <p class="counter-value text-4xl md:text-5xl font-black text-white" data-target="5">0</p>
         <p class="mt-3 text-[11px] md:text-xs uppercase tracking-[0.25em] text-slate-500 font-bold">Avg. Days Delivery</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" class="py-20 md:py-28 px-5 md:px-6">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-center">
       <div class="reveal">
-        <div class="relative glass rounded-[2.5rem] p-4 md:p-5 floating-card tilt-wrap" data-tilt>
-          <img src="krishna.png" alt="Krishna Sen Web Developer in Ahmedabad" class="w-full h-full object-cover rounded-[2rem] border border-white/10" />
+        <div class="relative glass rounded-[2.5rem] p-4 md:p-5 floating-card" data-tilt>
+          <img src="krishna.png" alt="Krishna Sen Web Developer in India" class="w-full h-full object-cover rounded-[2rem] border border-white/10" />
           <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-6 glass rounded-3xl px-5 py-4">
             <p class="text-[10px] uppercase tracking-[0.25em] text-cyan-300 font-bold">Expertise</p>
             <p class="text-white font-extrabold text-lg mt-1">Full Stack Dev</p>
@@ -594,7 +683,7 @@
 
         <p class="text-slate-400 text-base md:text-lg leading-8 mt-7">
           I am <span class="text-white font-bold">Krishna Sen</span>, a specialist in creating fast,
-          secure, and SEO-friendly websites. Based in Ahmedabad, India, I build business tools designed
+          secure, and SEO-friendly websites. Based in India, I build business tools designed
           to convert visitors into customers.
         </p>
 
@@ -626,7 +715,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="py-20 md:py-28 px-5 md:px-6">
     <div class="max-w-7xl mx-auto">
       <div class="text-center reveal">
@@ -639,7 +727,7 @@
       </div>
 
       <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-14">
-        <div class="glass rounded-[2rem] p-6 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
           <div class="service-icon mb-5"><i data-lucide="briefcase-business"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Business Websites</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -647,7 +735,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
           <div class="service-icon mb-5"><i data-lucide="user-round"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Portfolio Websites</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -655,7 +743,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
           <div class="service-icon mb-5"><i data-lucide="panel-top"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Landing Pages</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -663,7 +751,7 @@
           </p>
         </div>
 
-        <div class="glass rounded-[2rem] p-6 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2rem] p-6 floating-card reveal shine" data-tilt>
           <div class="service-icon mb-5"><i data-lucide="search-check"></i></div>
           <h3 class="text-white text-xl font-extrabold mb-3">Basic SEO Setup</h3>
           <p class="text-slate-400 leading-7 text-sm">
@@ -674,7 +762,53 @@
     </div>
   </section>
 
-  <!-- PRICING -->
+  <section id="projects" class="py-20 md:py-28 px-5 md:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center reveal">
+        <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Projects</p>
+        <h2 class="section-title text-white">Project Showcase</h2>
+        <p class="section-sub mt-6">
+          Showcase your style with premium project cards. Replace screenshots later with your real project images.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-14">
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Business website project" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Business Website</p>
+            <h3 class="text-white text-2xl font-black">Premium Local Business Site</h3>
+            <p class="text-slate-400 text-sm leading-7 mt-3">A clean, modern business website focused on calls, trust, and lead generation.</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Portfolio website project" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Portfolio Website</p>
+            <h3 class="text-white text-2xl font-black">Modern Developer Portfolio</h3>
+            <p class="text-slate-400 text-sm leading-7 mt-3">A professional personal branding website with premium visuals and responsive layout.</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2rem] overflow-hidden floating-card reveal project-card" data-tilt>
+          <div class="h-56 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="Landing page project" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <p class="text-cyan-300 text-xs uppercase tracking-[0.25em] font-bold mb-3">Landing Page</p>
+            <h3 class="text-white text-2xl font-black">High Conversion Offer Page</h3>
+            <p class="text-slate-400 text-sm leading-7 mt-3">A fast-loading page built for promotions, launches, and direct customer inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" class="py-20 md:py-28 px-5 md:px-6">
     <div class="max-w-7xl mx-auto">
       <div class="text-center reveal">
@@ -686,7 +820,7 @@
       </div>
 
       <div class="grid lg:grid-cols-3 gap-6 mt-14">
-        <div class="glass rounded-[2.5rem] p-8 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine" data-tilt>
           <p class="text-white text-2xl font-black">Lite Pack</p>
           <div class="mt-6 text-4xl font-black text-white">
             ₹1,799
@@ -700,7 +834,7 @@
           <a href="#contact" class="btn-secondary w-full mt-8">Choose Lite</a>
         </div>
 
-        <div class="glass rounded-[2.5rem] p-8 floating-card tilt-wrap reveal relative border border-cyan-400/40 shadow-[0_20px_80px_rgba(56,189,248,.12)] shine" data-tilt>
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal relative border border-cyan-400/40 shadow-[0_20px_80px_rgba(56,189,248,.12)] shine" data-tilt>
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-cyan-400 text-slate-950 text-[11px] font-black uppercase tracking-[0.2em]">
             Best Choice
           </div>
@@ -718,7 +852,7 @@
           <a href="#contact" class="btn-primary w-full mt-8">Choose Pro</a>
         </div>
 
-        <div class="glass rounded-[2.5rem] p-8 floating-card tilt-wrap reveal shine" data-tilt>
+        <div class="glass rounded-[2.5rem] p-8 floating-card reveal shine" data-tilt>
           <p class="text-white text-2xl font-black">Elite Pack</p>
           <div class="mt-6 text-4xl font-black text-white">
             ₹9,999
@@ -736,7 +870,47 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <section id="testimonials" class="py-20 md:py-28 px-5 md:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center reveal">
+        <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Testimonials</p>
+        <h2 class="section-title text-white">Client Feedback</h2>
+        <p class="section-sub mt-6">
+          Clean testimonial cards for your portfolio. You can replace these with real client reviews later.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mt-14">
+        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+          <div class="testimonial-stars text-lg mb-4">★★★★★</div>
+          <p class="text-slate-300 leading-8">“Very professional design and fast delivery. The website looks premium and works smoothly on mobile too.”</p>
+          <div class="mt-6">
+            <p class="text-white font-black">Business Owner</p>
+            <p class="text-slate-500 text-sm">Local Brand Client</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+          <div class="testimonial-stars text-lg mb-4">★★★★★</div>
+          <p class="text-slate-300 leading-8">“The landing page design was modern, clean, and exactly what I wanted for my business promotion.”</p>
+          <div class="mt-6">
+            <p class="text-white font-black">Startup Client</p>
+            <p class="text-slate-500 text-sm">Landing Page Project</p>
+          </div>
+        </div>
+
+        <div class="glass rounded-[2rem] p-6 floating-card reveal" data-tilt>
+          <div class="testimonial-stars text-lg mb-4">★★★★★</div>
+          <p class="text-slate-300 leading-8">“Responsive, stylish, and professional. Communication was good and the final website felt premium.”</p>
+          <div class="mt-6">
+            <p class="text-white font-black">Portfolio Client</p>
+            <p class="text-slate-500 text-sm">Personal Website Project</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="py-20 md:py-28 px-5 md:px-6">
     <div class="max-w-7xl mx-auto reveal">
       <div class="glass rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-10 lg:p-12 relative overflow-hidden">
@@ -822,12 +996,11 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="px-5 md:px-6 pb-8 pt-4">
     <div class="max-w-7xl mx-auto glass-soft rounded-[2rem] px-5 md:px-8 py-6">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
         <div id="footerYear" class="text-slate-500 text-[11px] md:text-xs uppercase tracking-[0.28em] text-center lg:text-left">
-          Krishna Sen Web Developer &copy; 2026 | Ahmedabad, India
+          Krishna Sen Web Developer &copy; 2026 | India
         </div>
 
         <div class="flex flex-wrap justify-center gap-5 md:gap-6 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">
@@ -840,7 +1013,6 @@
     </div>
   </footer>
 
-  <!-- LEGAL MODAL -->
   <div id="legalModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-6 bg-black/80 backdrop-blur-md">
     <div class="glass max-w-2xl w-full max-h-[80vh] rounded-[2rem] p-6 md:p-10 relative flex flex-col">
       <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white transition">
@@ -853,7 +1025,28 @@
   <script>
     lucide.createIcons();
 
-    // Mobile menu
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("pageLoader").classList.add("hidden");
+      }, 900);
+    });
+
+    const cursorDot = document.getElementById("cursorDot");
+    const cursorRing = document.getElementById("cursorRing");
+
+    window.addEventListener("mousemove", (e) => {
+      cursorDot.style.left = e.clientX + "px";
+      cursorDot.style.top = e.clientY + "px";
+
+      cursorRing.style.left = e.clientX + "px";
+      cursorRing.style.top = e.clientY + "px";
+    });
+
+    document.querySelectorAll("a, button, input, textarea").forEach(el => {
+      el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
+      el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
+    });
+
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
 
@@ -865,7 +1058,6 @@
       link.addEventListener('click', () => mobileMenu.classList.remove('open'));
     });
 
-    // Reveal on scroll
     function revealElements() {
       const reveals = document.querySelectorAll(".reveal");
       reveals.forEach((el) => {
@@ -880,7 +1072,6 @@
     window.addEventListener("scroll", revealElements);
     window.addEventListener("load", revealElements);
 
-    // Counters
     const counters = document.querySelectorAll(".counter-value");
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -911,7 +1102,6 @@
       updateCount();
     }
 
-    // 3D tilt effect
     const tiltCards = document.querySelectorAll("[data-tilt]");
 
     tiltCards.forEach((card) => {
@@ -936,11 +1126,9 @@
       });
     });
 
-    // Footer year
     document.getElementById("footerYear").innerHTML =
-      `Krishna Sen Web Developer &copy; ${new Date().getFullYear()} | Ahmedabad, India`;
+      `Krishna Sen Web Developer &copy; ${new Date().getFullYear()} | India`;
 
-    // Legal modal
     const legalContent = {
       privacy: `
         <h2 class="text-2xl md:text-3xl font-black text-white mb-4">Privacy Policy</h2>
