@@ -13,9 +13,10 @@
 
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="favicon.png">
-<link rel="shortcut icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Krishna Sen | Web Developer in India</title>
 
   <meta name="description" content="Krishna Sen is a professional web developer in India. I create modern business websites, shop websites and portfolio websites at affordable prices. Contact now for website development services." />
@@ -482,6 +483,107 @@
       grid-template-columns:.85fr 1.15fr;
       gap:40px;
       align-items:start;
+    }
+
+    .review-star{
+      transition:.2s ease;
+      user-select:none;
+    }
+
+    .review-star:hover{
+      transform:scale(1.12);
+    }
+
+    .review-card-enter{
+      animation:reviewPop .5s ease;
+    }
+
+    @keyframes reviewPop{
+      0%{
+        opacity:0;
+        transform:translateY(20px) scale(.96);
+      }
+      100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+      }
+    }
+
+    .thankyou-overlay{
+      position:fixed;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(3,6,12,.82);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      z-index:10000;
+      opacity:0;
+      visibility:hidden;
+      transition:.35s ease;
+      padding:20px;
+    }
+
+    .thankyou-overlay.show{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .thankyou-box{
+      width:min(520px, 100%);
+      text-align:center;
+      padding:40px 24px;
+      border-radius:32px;
+      position:relative;
+      overflow:hidden;
+      animation:thankYouScale .45s ease;
+    }
+
+    @keyframes thankYouScale{
+      0%{
+        transform:scale(.85);
+        opacity:0;
+      }
+      100%{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .thankyou-check{
+      width:92px;
+      height:92px;
+      margin:0 auto 18px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(34,197,94,.22), rgba(56,189,248,.18));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 0 45px rgba(34,197,94,.18);
+      animation:thankYouPulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes thankYouPulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.06)}
+    }
+
+    .confetti{
+      position:absolute;
+      width:10px;
+      height:18px;
+      top:-30px;
+      border-radius:4px;
+      opacity:.9;
+      animation:confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall{
+      to{
+        transform:translateY(115vh) rotate(720deg);
+        opacity:1;
+      }
     }
 
     @media (max-width: 1100px){
@@ -984,7 +1086,7 @@
         </p>
       </div>
 
-      <div class="testimonials-grid mt-14">
+      <div id="testimonialCards" class="testimonials-grid mt-14">
         <div class="glass rounded-[2rem] p-6 floating-card reveal">
           <div class="testimonial-stars text-lg mb-4">★★★★★</div>
           <p class="text-slate-300 leading-8">“Very professional design and fast delivery. The website looks premium and works smoothly on mobile too.”</p>
@@ -1010,6 +1112,39 @@
             <p class="text-white font-black">Portfolio Client</p>
             <p class="text-slate-500 text-sm">Personal Website Project</p>
           </div>
+        </div>
+      </div>
+
+      <div class="mt-14 reveal">
+        <div class="glass rounded-[2rem] p-6 md:p-8 floating-card max-w-3xl mx-auto">
+          <p class="text-cyan-300 uppercase tracking-[0.35em] text-xs font-bold mb-4">Leave a Review</p>
+          <h3 class="text-white text-2xl md:text-3xl font-black mb-4">Share Your Feedback</h3>
+          <p class="text-slate-400 leading-7 mb-6">
+            Give your review and star rating. After submit, a thank you animation will show.
+          </p>
+
+          <form id="reviewForm" class="grid gap-4">
+            <input type="text" id="reviewName" placeholder="Your Name" required class="contact-input">
+
+            <div>
+              <p class="text-white font-bold mb-3">Your Rating</p>
+              <div class="flex gap-2 text-3xl" id="starRating">
+                <span class="review-star cursor-pointer text-slate-500" data-value="1">★</span>
+                <span class="review-star cursor-pointer text-slate-500" data-value="2">★</span>
+                <span class="review-star cursor-pointer text-slate-500" data-value="3">★</span>
+                <span class="review-star cursor-pointer text-slate-500" data-value="4">★</span>
+                <span class="review-star cursor-pointer text-slate-500" data-value="5">★</span>
+              </div>
+              <input type="hidden" id="reviewRating" value="0">
+            </div>
+
+            <textarea id="reviewMessage" rows="5" placeholder="Write your review..." required class="contact-input resize-none"></textarea>
+
+            <button type="submit" class="btn-primary w-full">
+              <i data-lucide="star"></i>
+              Submit Review
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -1108,6 +1243,21 @@
     </div>
   </div>
 
+  <div id="thankYouOverlay" class="thankyou-overlay">
+    <div class="thankyou-box glass">
+      <div class="thankyou-check">
+        <i data-lucide="check" class="w-12 h-12 text-emerald-300"></i>
+      </div>
+      <h3 class="text-white text-3xl md:text-4xl font-black">Thank You!</h3>
+      <p class="text-slate-300 mt-4 leading-8 max-w-md mx-auto">
+        Your review has been added successfully.
+      </p>
+      <button id="closeThankYou" class="btn-primary mt-8">
+        Close
+      </button>
+    </div>
+  </div>
+
   <script>
     lucide.createIcons();
 
@@ -1130,7 +1280,7 @@
         cursorRing.style.top = e.clientY + "px";
       });
 
-      document.querySelectorAll("a, button, input, textarea").forEach((el) => {
+      document.querySelectorAll("a, button, input, textarea, .review-star").forEach((el) => {
         el.addEventListener("mouseenter", () => cursorRing.classList.add("active"));
         el.addEventListener("mouseleave", () => cursorRing.classList.remove("active"));
       });
@@ -1254,6 +1404,131 @@
 
     document.getElementById("legalModal").addEventListener("click", (e) => {
       if (e.target.id === "legalModal") closeModal();
+    });
+
+    const stars = document.querySelectorAll(".review-star");
+    const reviewRatingInput = document.getElementById("reviewRating");
+    const reviewForm = document.getElementById("reviewForm");
+    const testimonialCards = document.getElementById("testimonialCards");
+    const thankYouOverlay = document.getElementById("thankYouOverlay");
+    const closeThankYou = document.getElementById("closeThankYou");
+
+    let selectedRating = 0;
+
+    function paintStars(rating) {
+      stars.forEach((star) => {
+        const value = Number(star.dataset.value);
+        if (value <= rating) {
+          star.classList.remove("text-slate-500");
+          star.classList.add("text-yellow-400");
+        } else {
+          star.classList.remove("text-yellow-400");
+          star.classList.add("text-slate-500");
+        }
+      });
+    }
+
+    stars.forEach((star) => {
+      star.addEventListener("mouseenter", () => {
+        paintStars(Number(star.dataset.value));
+      });
+
+      star.addEventListener("mouseleave", () => {
+        paintStars(selectedRating);
+      });
+
+      star.addEventListener("click", () => {
+        selectedRating = Number(star.dataset.value);
+        reviewRatingInput.value = selectedRating;
+        paintStars(selectedRating);
+      });
+    });
+
+    function showThankYouAnimation() {
+      thankYouOverlay.classList.add("show");
+      document.body.style.overflow = "hidden";
+
+      for (let i = 0; i < 28; i++) {
+        const confetti = document.createElement("span");
+        confetti.className = "confetti";
+
+        const left = Math.random() * 100;
+        const delay = Math.random() * 0.5;
+        const duration = 2.5 + Math.random() * 2.5;
+        const rotate = Math.random() * 360;
+
+        const colors = [
+          "#38bdf8",
+          "#818cf8",
+          "#c084fc",
+          "#facc15",
+          "#34d399",
+          "#ffffff"
+        ];
+
+        confetti.style.left = left + "%";
+        confetti.style.animationDuration = duration + "s";
+        confetti.style.animationDelay = delay + "s";
+        confetti.style.transform = `rotate(${rotate}deg)`;
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        thankYouOverlay.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, (duration + delay) * 1000);
+      }
+
+      lucide.createIcons();
+    }
+
+    function hideThankYouAnimation() {
+      thankYouOverlay.classList.remove("show");
+      document.body.style.overflow = "auto";
+    }
+
+    closeThankYou.addEventListener("click", hideThankYouAnimation);
+
+    thankYouOverlay.addEventListener("click", (e) => {
+      if (e.target.id === "thankYouOverlay") {
+        hideThankYouAnimation();
+      }
+    });
+
+    reviewForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("reviewName").value.trim();
+      const message = document.getElementById("reviewMessage").value.trim();
+      const rating = Number(reviewRatingInput.value);
+
+      if (!name || !message) {
+        alert("Please fill all review fields.");
+        return;
+      }
+
+      if (rating === 0) {
+        alert("Please select a star rating.");
+        return;
+      }
+
+      const reviewCard = document.createElement("div");
+      reviewCard.className = "glass rounded-[2rem] p-6 floating-card reveal active review-card-enter";
+      reviewCard.innerHTML = `
+        <div class="testimonial-stars text-lg mb-4">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
+        <p class="text-slate-300 leading-8">“${message.replace(/</g, "&lt;").replace(/>/g, "&gt;")}”</p>
+        <div class="mt-6">
+          <p class="text-white font-black">${name.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>
+          <p class="text-slate-500 text-sm">Website Visitor Review</p>
+        </div>
+      `;
+
+      testimonialCards.prepend(reviewCard);
+      reviewForm.reset();
+      selectedRating = 0;
+      reviewRatingInput.value = 0;
+      paintStars(0);
+      showThankYouAnimation();
     });
   </script>
 </body>
