@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Professional Blog - Share your stories and ideas with our beautiful blogging platform">
+    <meta name="keywords" content="modern blog, viral blog, trending articles, latest insights, technology blog, lifestyle blog, business blog, travel blog, professional blogging platform, popular stories">
+    <title>ModernBlog - Your Professional Blogging Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>ModernBlog</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#posts">Blog</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to ModernBlog</h2>
+            <p class="hero-subtitle">Discover inspiring stories, valuable insights, and professional content from around the world</p>
+            <a href="#posts" class="cta-button">Explore Articles</a>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Search blog posts..." class="search-bar">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
+                        <line x1="13" y1="13" x2="18" y2="18" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h3 class="section-title">Browse by Category</h3>
+            <div class="categories-grid">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="technology">Technology</button>
+                <button class="category-btn" data-category="lifestyle">Lifestyle</button>
+                <button class="category-btn" data-category="travel">Travel</button>
+                <button class="category-btn" data-category="business">Business</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Posts</h2>
+            <div class="ad-space ad-space.horizontal">
+                <div>
+                    <span class="ad-label">Advertisement</span>
+                    <!-- Google AdSense Ad Space -->
+                    <!-- 728x90 Leaderboard Ad -->
+                    <p>728x90 Leaderboard Ad</p>
+                </div>
+            </div>
+            <div class="featured-posts">
+                <div class="featured-post" data-category="technology">
+                    <div class="featured-image">
+                        <img src="https://picsum.photos/seed/featured-web-development/1200/700" alt="Future of Web Development" loading="eager" decoding="async" fetchpriority="high" data-lazy-image>
+                    </div>
+                    <div class="featured-content">
+                        <span class="featured-tag">Featured</span>
+                        <h3>The Future of Web Development</h3>
+                        <p>Explore the latest trends and technologies shaping the web development landscape in 2026 and beyond.</p>
+                        <div class="featured-meta">
+                            <span>By Sarah Anderson</span>
+                            <span>March 15, 2026</span>
+                        </div>
+                        <a href="blog-detail.html" class="read-more">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts Grid -->
+    <section id="posts" class="posts-section">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="posts-section-wrapper">
+                <div class="posts-grid" id="postsGrid">
+                    <!-- Posts will be dynamically loaded here -->
+                </div>
+                <aside class="sidebar">
+                    <div class="ad-space ad-space.sidebar">
+                        <div>
+                            <span class="ad-label">Advertisement</span>
+                            <!-- Google AdSense Ad Space -->
+                            <!-- Place Your Google AdSense Code Here -->
+                            <p>300x600 Ad Space</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <h2 class="section-title">About ModernBlog</h2>
+                    <p>ModernBlog is a cutting-edge blogging platform dedicated to sharing high-quality content across various categories including technology, lifestyle, travel, and business.</p>
+                    <p>Founded in 2024, we've grown into a vibrant community of writers and readers passionate about storytelling and knowledge sharing. Our mission is to provide a clean, modern, and engaging platform for content creators worldwide.</p>
+                    <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);"><strong>Designed & Developed by <a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">Ksen Studio</a></strong><br>Creating professional, modern, and responsive web experiences with cutting-edge design and technology.</p>
+                    <ul class="about-features">
+                        <li>✓ Professional Content Creators</li>
+                        <li>✓ SEO Optimized Articles</li>
+                        <li>✓ Fast Loading Times</li>
+                        <li>✓ Beautiful Design</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/about-modern-blog/900/700" alt="ModernBlog" loading="lazy" decoding="async" data-lazy-image>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews/Testimonials Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">What Our Readers Say</h2>
+            <div class="testimonials-grid" id="testimonialsList">
+                <!-- Testimonials will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Form Section -->
+    <section class="review-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Share Your Review</h2>
+                <p class="form-subtitle">Help us improve by sharing your feedback and experience</p>
+                <form id="reviewForm" class="review-form">
+                    <div class="form-group">
+                        <label for="reviewName">Your Name</label>
+                        <input type="text" id="reviewName" name="name" required placeholder="Enter your name">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewEmail">Email Address</label>
+                        <input type="email" id="reviewEmail" name="email" required placeholder="Enter your email">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="hidden" id="ratingInput" name="rating" value="0">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review</label>
+                        <textarea id="reviewMessage" name="message" required placeholder="Share your thoughts and experience..." rows="5"></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:ksenwebdevloper@gamil.com">ksenwebdevloper@gamil.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Address</h4>
+                        <p>123 Blog Street, Tech City, TC 12345</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Website</h4>
+                        <p><a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">ksenstudio.in</a></p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>ModernBlog is your go-to platform for quality content and professional blogging. Crafted with excellence by <a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">Ksen Studio</a>.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#posts">Blog</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">f</a>
+                        <a href="#" class="social-link" title="Twitter">𝕏</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ModernBlog. All rights reserved. | Made by <strong><a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">Ksen Studio</a></strong> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
