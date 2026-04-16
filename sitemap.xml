@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Website -->
   <url>
-    <loc>https://ksenstudio.github.io/ksenstudio/</loc>
-    <lastmod>2026-02-27</lastmod>
+    <loc>https://ksenstudio.in/</loc>
+    <lastmod>2026-04-16</lastmod>
     <priority>1.00</priority>
   </url>
+
+  <!-- Blog Home -->
+  <url>
+    <loc>https://ksenstudio.in/blog/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://ksenstudio.in/blog/blog-detail.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://ksenstudio.in/blog/blog-detail-new.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://ksenstudio.in/blog/privacy-policy.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.60</priority>
+  </url>
+
 </urlset>
