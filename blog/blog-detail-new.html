@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the full blog post on ModernBlog">
+    <meta name="keywords" content="viral blog post, trending article, modern blog, expert insights, technology article, lifestyle article, business article, travel article">
+    <title>Blog Post - ModernBlog</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-detail-section {
+            padding: 4rem 0;
+        }
+
+        .blog-detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-detail-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .blog-detail-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .blog-detail-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .blog-detail-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-detail-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-detail-content {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .blog-detail-content h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-detail-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-detail-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-detail-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-detail-author {
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .author-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .comments-section {
+            margin-top: 4rem;
+        }
+
+        .comment {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .comment-date {
+            color: var(--text-color);
+            font-size: 0.85rem;
+        }
+
+        .comment-text {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .back-button::before {
+            content: '← ';
+        }
+
+        .add-comment-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .add-comment-btn:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .blog-detail-title {
+                font-size: 1.8rem;
+            }
+
+            .blog-detail-image {
+                height: 250px;
+            }
+
+            .blog-detail-content {
+                padding: 1.5rem;
+            }
+
+            .blog-detail-meta {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>ModernBlog</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="index.html#featured">Featured</a></li>
+                    <li><a href="index.html#posts">Blog</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Detail Section -->
+    <section class="blog-detail-section">
+        <div class="container">
+            <a href="index.html#posts" class="back-button">Back to Posts</a>
+
+            <div class="blog-detail-container">
+                <div class="blog-detail-header">
+                    <h1 class="blog-detail-title">Loading...</h1>
+                    <div class="blog-detail-meta">
+                        <span>By <strong>Author</strong></span>
+                        <span>Date</span>
+                        <span>Read time</span>
+                    </div>
+                </div>
+
+                <div class="blog-detail-image">
+                    <img src="https://picsum.photos/seed/blog-detail-default/1200/700" alt="Blog Post Image" loading="eager" decoding="async" fetchpriority="high" data-lazy-image>
+                </div>
+
+                <div class="blog-detail-content">
+                    <p>Loading blog content...</p>
+                </div>
+
+                <!-- Author Section -->
+                <div class="blog-detail-author">
+                    <div class="author-header">
+                        <div class="author-avatar">--</div>
+                        <div>
+                            <div class="author-info">
+                                <h4>Author Name</h4>
+                                <p>Author bio will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>More information about the author will be displayed here.</p>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3 style="color: var(--primary-color); margin-bottom: 2rem;">Reader Comments (3)</h3>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">Michael Chen</span>
+                            <span class="comment-date">March 16, 2026</span>
+                        </div>
+                        <p class="comment-text">Excellent article! The insights are particularly valuable. Can't wait to see these concepts mature and become more accessible to everyone.</p>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">Emma Watson</span>
+                            <span class="comment-date">March 16, 2026</span>
+                        </div>
+                        <p class="comment-text">Great breakdown of the topic. I particularly appreciate the detailed explanations. It's an important resource for anyone interested in learning more.</p>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">James Wilson</span>
+                            <span class="comment-date">March 17, 2026</span>
+                        </div>
+                        <p class="comment-text">Fascinating read! I'm already exploring ways to apply these concepts in my own projects. Thanks for the comprehensive overview!</p>
+                    </div>
+
+                    <button class="add-comment-btn">Add Your Comment</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>ModernBlog is your go-to platform for quality content and professional blogging. Crafted with excellence by <a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">Ksen Studio</a>.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#posts">Blog</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Facebook">f</a>
+                        <a href="#" class="social-link" title="Twitter">𝕏</a>
+                        <a href="#" class="social-link" title="Instagram">📷</a>
+                        <a href="#" class="social-link" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ModernBlog. All rights reserved. | Made by <strong><a href="https://ksenstudio.in" target="_blank" rel="noopener noreferrer">Ksen Studio</a></strong> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load blog detail when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogDetail();
+            setupMobileMenu();
+        });
+    </script>
+</body>
+</html>
